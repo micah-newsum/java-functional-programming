@@ -1,8 +1,9 @@
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Consumer;
 
-public class App {
+public class Basics {
   private static List<String> ingredients;
 
   static {
@@ -94,6 +95,19 @@ public class App {
     ingredients.forEach(printer);
   }
 
+  private static void printIngredientsWithMethodReference(){
+    System.out.println();
+    System.out.println("print ingredients with method reference.");
+    ingredients.forEach(System.out::println);
+  }
+
+  private static void generateCustomNullPointerExceptionMessageWithSupplier(){
+    System.out.println();
+    System.out.println("generates custom null pointer exception message with Supplier<String>.");
+    // second parameter is Supplier<String> and is called lazily. In other words, the Supplier<String> is only invoked if first param is null; otherwise, it is ignored.
+    Objects.requireNonNull(null,() -> "This is the customer NullPointerException message.");
+  }
+
   public static void main(String[] args) {
     hasEggsImperative();
     hasEggsForEachImperative();
@@ -103,5 +117,7 @@ public class App {
     printIngredientsLambdaLongForm();
     printIngredientsLambdaShortForm();
     printIngredientsWithConsumerType();
+    printIngredientsWithMethodReference();
+    generateCustomNullPointerExceptionMessageWithSupplier();
   }
 }

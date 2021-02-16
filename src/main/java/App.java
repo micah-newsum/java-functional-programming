@@ -27,7 +27,20 @@ public class App {
     }
   }
 
+  private static void hasEggsForEachImperative()
+  {
+    System.out.println("has eggs for each imperative.");
+    boolean hasEggs = false;
+    for (String ingredient : ingredients) {
+      if (ingredient.equals("eggs")) {
+        hasEggs = true;
+        break;
+      }
+    }
+  }
+
   public static void main(String[] args) {
     hasEggsImperative();
+    hasEggsForEachImperative();
   }
 }

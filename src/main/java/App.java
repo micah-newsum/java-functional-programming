@@ -57,7 +57,7 @@ public class App {
     }
   }
 
-  private static void printIngredientsForEachDeclarative(){
+  private static void printIngredientsForEachAnonymousClass(){
     System.out.println();
     System.out.println("print ingredients using forEach method declarative.");
     ingredients.forEach(new Consumer<String>() {
@@ -68,11 +68,35 @@ public class App {
     });
   }
 
+  private static void printIngredientsLambdaLongForm(){
+    System.out.println();
+    System.out.println("print ingredients using lambda long form.");
+    ingredients.forEach((String ingredient)-> {
+        System.out.println(ingredient);
+    });
+  }
+
+  private static void printIngredientsLambdaShortForm(){
+    System.out.println();
+    System.out.println("print ingredients using lambda short form.");
+    ingredients.forEach(ingredient -> System.out.println(ingredient));
+  }
+
+  private static void printIngredientsWithConsumerType(){
+    System.out.println();
+    System.out.println("print ingredients with Consumber<String> type.");
+    Consumer<String> printer = ingredient -> System.out.println(ingredient);
+    ingredients.forEach(printer);
+  }
+
   public static void main(String[] args) {
     hasEggsImperative();
     hasEggsForEachImperative();
     hasEggsDeclarative();
     printIngredientsImperative();
-    printIngredientsForEachDeclarative();
+    printIngredientsForEachAnonymousClass();
+    printIngredientsLambdaLongForm();
+    printIngredientsLambdaShortForm();
+    printIngredientsWithConsumerType();
   }
 }

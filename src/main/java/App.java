@@ -16,12 +16,12 @@ public class App {
   }
 
   private static void hasEggsImperative() {
-    System.out.println("has eggs imperative.");
     boolean hasEggs = false;
     for (int i = 0; i < ingredients.size(); i++) {
       String ingredient = ingredients.get(i);
       if (ingredient.equals("eggs")) {
         hasEggs = true;
+        System.out.println("has eggs imperative.");
         break;
       }
     }
@@ -29,18 +29,25 @@ public class App {
 
   private static void hasEggsForEachImperative()
   {
-    System.out.println("has eggs for each imperative.");
     boolean hasEggs = false;
     for (String ingredient : ingredients) {
       if (ingredient.equals("eggs")) {
         hasEggs = true;
+        System.out.println("has eggs for each imperative.");
         break;
       }
+    }
+  }
+
+  private static void hasEggsDeclarative(){
+    if (ingredients.contains("eggs")){
+      System.out.println("has eggs declarative.");
     }
   }
 
   public static void main(String[] args) {
     hasEggsImperative();
     hasEggsForEachImperative();
+    hasEggsDeclarative();
   }
 }

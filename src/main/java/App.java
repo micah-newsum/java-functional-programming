@@ -57,6 +57,7 @@ public class App {
     }
   }
 
+  //This is what Java code looked like prior to version 8.
   private static void printIngredientsForEachAnonymousClass(){
     System.out.println();
     System.out.println("print ingredients using forEach method declarative.");
@@ -68,6 +69,7 @@ public class App {
     });
   }
 
+  //Lambda's allow for same functionality as anonymous classes, yet more succinctly.
   private static void printIngredientsLambdaLongForm(){
     System.out.println();
     System.out.println("print ingredients using lambda long form.");
@@ -76,12 +78,15 @@ public class App {
     });
   }
 
+  // The String type is inferred from the List<String> ingredients.
+  // Also, since the body of the lambda expression is a single statement, the brackets may be omitted.
   private static void printIngredientsLambdaShortForm(){
     System.out.println();
     System.out.println("print ingredients using lambda short form.");
     ingredients.forEach(ingredient -> System.out.println(ingredient));
   }
 
+  //Exemplifies the fact that functions are types
   private static void printIngredientsWithConsumerType(){
     System.out.println();
     System.out.println("print ingredients with Consumber<String> type.");

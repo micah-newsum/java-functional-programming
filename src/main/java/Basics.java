@@ -3,6 +3,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
+/**
+ * Class to exemplify the basics of functional programming in Java.
+ */
 public class Basics {
   private static List<String> ingredients;
 

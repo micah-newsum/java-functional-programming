@@ -104,13 +104,6 @@ public class Basics {
     ingredients.forEach(System.out::println);
   }
 
-  private static void generateCustomNullPointerExceptionMessageWithSupplier(){
-    System.out.println();
-    System.out.println("generates custom null pointer exception message with Supplier<String>.");
-    // second parameter is Supplier<String> and is called lazily. In other words, the Supplier<String> is only invoked if first param is null; otherwise, it is ignored.
-    Objects.requireNonNull(null,() -> "This is the customer NullPointerException message.");
-  }
-
   public static void main(String[] args) {
     hasEggsImperative();
     hasEggsForEachImperative();
@@ -121,6 +114,5 @@ public class Basics {
     printIngredientsLambdaShortForm();
     printIngredientsWithConsumerType();
     printIngredientsWithMethodReference();
-    generateCustomNullPointerExceptionMessageWithSupplier();
   }
 }
